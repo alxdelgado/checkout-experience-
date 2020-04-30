@@ -5,13 +5,13 @@ export default class ErrorBoundary extends React.Component {
         super(props);
 
         this.state = {
-            // error check
+            // init error state; 
             hasError: false
         }
     }
 
     static getDerivedStateFromError(error) {
-        // process the error
+        // process the error;
         return { hasErrored: true }
     }
 
