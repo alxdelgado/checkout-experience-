@@ -1,4 +1,5 @@
 import React from 'react';
+import regeneratorRuntime from 'regenerator-runtime';
 
 export default class ErrorBoundary extends React.Component {
     constructor(props) {

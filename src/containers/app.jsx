@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import {
     Switch,
     Route,
@@ -7,11 +7,11 @@ import {
 } from 'react-router-dom';
 
 // import pages; 
-const HomePage = lazy(() => import('../pages/home-page/home-page.component'));
-const SubscriptionPage = lazy(() => import('../pages/subscription-page/subscription-page.component'));
+const HomePage = React.lazy(() => import('../pages/home-page/home-page.component'));
+const SubscriptionPage = React.lazy(() => import('../pages/subscription-page/subscription-page.component'));
 
 
-//import components
+//import components;
 import ErrorBoundary from '../components/error-boundary/error-boundary.component';
 
 export default function App() {

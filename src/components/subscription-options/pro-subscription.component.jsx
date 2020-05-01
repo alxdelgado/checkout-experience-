@@ -1,4 +1,6 @@
-import React, { Fragment, Suspense } from 'react';
+import React, { Fragment, Suspense, useState, useEffect } from 'react';
+import regeneratorRuntime from 'regenerator-runtime';
+import axios from 'axios';
 
 // import styled components; 
 import {
@@ -12,14 +14,39 @@ import {
 
 // import components; 
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
+const Avatar = React.lazy(() => import('../../components/avatar/avatar.component'));
 
 export default function ProSubscription() {
+
+    //init state for photo; 
+    const [photo, setPhoto] = useState([]);
+
+    // init state for error handing; 
+    const [error, setError] = useState(false);
+
+    // lifecycle method; 
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios('https://pokeapi.co/api/v2/pokemon/1/');
+                setPhoto(response);
+            } catch (error) {
+                console.log(error);
+                setError: true;
+            }
+        }
+
+        fetchData();
+    }, [])
+    console.log(photo);
+
     return (
         <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
                 <React.Fragment>
                     <ProWrapper>
                         <ProContainer>
+                            <Avatar photo={photo} />
                             <ProTitle>Professional</ProTitle>
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>
