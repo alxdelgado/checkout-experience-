@@ -3,6 +3,7 @@ import React, { Fragment, Suspense } from 'react';
 //import styled components 
 import {
     StarterWrapper,
+    StarterContainer,
     StarterTitle,
     EuroSymbol,
     Cost,
@@ -20,10 +21,12 @@ export default function StarterSubscription() {
             <Suspense fallback={<div>Loading...</div>}>
                 <React.Fragment>
                     <StarterWrapper>
-                        <StarterTitle>Starter</StarterTitle>
-                        <EuroSymbol>€</EuroSymbol>
-                        <Cost>0</Cost>
-                        <PerMonth>/ month</PerMonth>
+                        <StarterContainer>
+                            <StarterTitle>Starter</StarterTitle>
+                            <EuroSymbol>€</EuroSymbol>
+                            <Cost>0</Cost>
+                            <PerMonth>/ month</PerMonth>
+                        </StarterContainer>
                     </StarterWrapper>
                 </React.Fragment>
             </Suspense>
