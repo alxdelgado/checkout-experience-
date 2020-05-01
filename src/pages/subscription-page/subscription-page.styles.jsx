@@ -8,6 +8,11 @@ export const SubscriptionWrapper = styled.div`
     padding: 0px 0px 10px 10px;  
 `;
 
+export const SubscriptionContainer = styled.div`
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+`;
+
 export const SubscriptionTitle = styled.h4`
     text-align: center; 
     font-size: 20px;

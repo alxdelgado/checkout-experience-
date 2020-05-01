@@ -1,23 +1,33 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Suspense } from 'react';
 
 // import styles
 import {
     SubscriptionWrapper,
+    SubscriptionContainer,
     SubscriptionTitle,
     SubscriptionSpan
 } from '../subscription-page/subscription-page.styles';
 
-// import components
+// import components; 
+const ErrorBoundary = React.lazy(() => import('../../components/error-boundary/error-boundary.component'));
 const StarterSubscription = React.lazy(() => import('../../components/subscription-options/starter-subscription.component'));
+const ProSubscription = React.lazy(() => import('../../components/subscription-options/pro-subscription.component'));
 
 export default function SubscriptionPage() {
     return (
-        <React.Fragment>
-            <SubscriptionWrapper>
-                <SubscriptionTitle>Get Started Today</SubscriptionTitle>
-                <SubscriptionSpan>Choose the right plan and start creating projects</SubscriptionSpan>
-                <StarterSubscription />
-            </SubscriptionWrapper>
-        </React.Fragment>
+        <ErrorBoundary>
+            <Suspense fallback={<div>Loading...</div>}>
+                <React.Fragment>
+                    <SubscriptionWrapper>
+                        <SubscriptionTitle>Get Started Today</SubscriptionTitle>
+                        <SubscriptionSpan>Choose the right plan and start creating projects</SubscriptionSpan>
+                        <SubscriptionContainer>
+                            <StarterSubscription />
+                            <ProSubscription />
+                        </SubscriptionContainer>
+                    </SubscriptionWrapper>
+                </React.Fragment>
+            </Suspense>
+        </ErrorBoundary>
     )
 }; 
