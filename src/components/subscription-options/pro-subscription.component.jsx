@@ -3,6 +3,7 @@ import React, { Fragment, Suspense } from 'react';
 // import styled components; 
 import {
     ProWrapper,
+    ProContainer,
     ProTitle,
     EuroSymbol,
     Cost,
@@ -18,10 +19,12 @@ export default function ProSubscription() {
             <Suspense fallback={<div>Loading...</div>}>
                 <React.Fragment>
                     <ProWrapper>
-                        <ProTitle>Professional</ProTitle>
-                        <EuroSymbol>€</EuroSymbol>
-                        <Cost>0</Cost>
-                        <PerMonth>/ month</PerMonth>
+                        <ProContainer>
+                            <ProTitle>Professional</ProTitle>
+                            <EuroSymbol>€</EuroSymbol>
+                            <Cost>0</Cost>
+                            <PerMonth>/ month</PerMonth>
+                        </ProContainer>
                     </ProWrapper>
                 </React.Fragment>
             </Suspense>
