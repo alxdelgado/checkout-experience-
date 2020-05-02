@@ -18,18 +18,18 @@ const Avatar = React.lazy(() => import('../../components/avatar/avatar.component
 
 export default function ProSubscription() {
 
-    //init state for photo; 
-    const [photo, setPhoto] = useState([]);
+    //init state for pokemon; 
+    const [pokemon, setPokemon] = useState([]);
 
     // init state for error handing; 
-    const [error, setError] = useState(false);
+    const [error, setError] = useState(null);
 
     // lifecycle method; 
     useEffect(() => {
         async function fetchData() {
             try {
                 const response = await axios('https://pokeapi.co/api/v2/pokemon/1/');
-                setPhoto(response);
+                setPokemon(response);
             } catch (error) {
                 console.log(error);
                 setError: true;
@@ -38,15 +38,16 @@ export default function ProSubscription() {
 
         fetchData();
     }, [])
-    console.log(photo);
+    console.log(pokemon);
+    console.log(error);
 
     return (
-        <ErrorBoundary>
+        <ErrorBoundary error={error}>
             <Suspense fallback={<div>Loading...</div>}>
                 <React.Fragment>
                     <ProWrapper>
                         <ProContainer>
-                            <Avatar photo={photo} />
+                            <Avatar pokemon={pokemon} />
                             <ProTitle>Professional</ProTitle>
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>

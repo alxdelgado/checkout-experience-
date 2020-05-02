@@ -22,24 +22,24 @@ export const ProContainer = styled.div`
 
 export const ProTitle = styled.h4`
     padding: 0em 0em 0em 4.5em;
-    margin: 1em 0em 0em 1em;
+    margin: -4.5em 0em 0em 1.5em;
     font-size: 20px;  
 `;
 
 export const EuroSymbol = styled.p`
     font-size: 13px;
     padding-left: 7em;
-    margin: 1em 0em 0em 1em;
+    margin: 0.3em 0em 0em 2.1em;
 `;
 
 export const Cost = styled.p`
     font-size: 20px;
-    padding-left: 6em;
-    margin-top: -12px;
+    padding: 0 auto;
+    margin: -0.5em 0em 0em 6.5em;
 `;
 
 export const PerMonth = styled.p`
     font-size: 15px;
-    padding-left: 9em;
-    margin-top: -38px;
+    padding: 0 auto;
+    margin: -1.2em 0em 0em 9.6em; 
 `;

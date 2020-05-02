@@ -15,7 +15,8 @@ import {
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
 
 
-export default function StarterSubscription() {
+export default function StarterSubscription(props) {
+    console.log(props)
     return (
         <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
