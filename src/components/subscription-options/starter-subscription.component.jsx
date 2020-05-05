@@ -1,4 +1,6 @@
-import React, { Fragment, Suspense } from 'react';
+import React, { Fragment, Suspense, useState, useEffect } from 'react';
+import regeneratorRuntime from "regenerator-runtime";
+import axios from 'axios'
 
 //import styled components 
 import {
@@ -13,16 +15,42 @@ import {
 
 // import components; 
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
+const Avatar = React.lazy(() => import('../avatar/avatar.component'));
 
 
-export default function StarterSubscription(props) {
-    console.log(props)
+
+export default function StarterSubscription() {
+
+    //init state for pokemon; 
+    const [pokemon, setPokemon] = useState([]);
+
+    // init state for error handing; 
+    const [error, setError] = useState(null);
+
+    // lifecycle method; 
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios('https://pokeapi.co/api/v2/pokemon/2/');
+                setPokemon(response);
+            } catch (error) {
+                console.log(error);
+                setError: true;
+            }
+        }
+
+        fetchData();
+    }, [])
+    console.log(pokemon);
+    console.log(error);
+
     return (
         <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
                 <React.Fragment>
                     <StarterWrapper>
                         <StarterContainer>
+                            <Avatar />
                             <StarterTitle>Starter</StarterTitle>
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>

@@ -1,4 +1,6 @@
 import React, { Suspense } from 'react';
+import axios from 'axios';
+
 import {
     Switch,
     Route,
@@ -15,6 +17,7 @@ const SubscriptionPage = React.lazy(() => import('../pages/subscription-page/sub
 import ErrorBoundary from '../components/error-boundary/error-boundary.component';
 
 export default function App() {
+
     return (
         <Router>
             <Switch>

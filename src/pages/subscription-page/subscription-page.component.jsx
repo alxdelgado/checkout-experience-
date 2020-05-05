@@ -16,6 +16,7 @@ const ProSubscription = React.lazy(() => import('../../components/subscription-o
 
 
 export default function SubscriptionPage() {
+
     return (
         <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>

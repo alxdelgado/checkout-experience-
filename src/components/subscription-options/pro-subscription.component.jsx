@@ -42,12 +42,12 @@ export default function ProSubscription() {
     console.log(error);
 
     return (
-        <ErrorBoundary error={error}>
+        <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
                 <React.Fragment>
                     <ProWrapper>
                         <ProContainer>
-                            <Avatar pokemon={pokemon} />
+                            <Avatar />
                             <ProTitle>Professional</ProTitle>
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>

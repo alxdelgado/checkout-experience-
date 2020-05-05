@@ -20,7 +20,7 @@ export default function Avatar(props) {
                 <React.Fragment>
                     <AvatarWrapper>
                         <AvatarContainer>
-                            <AvatarImage src={props.pokemon.data.sprites.front_shiny} />
+                            <AvatarImage />
                         </AvatarContainer>
                     </AvatarWrapper>
                 </React.Fragment>
