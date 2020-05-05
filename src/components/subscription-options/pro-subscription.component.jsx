@@ -14,7 +14,7 @@ import {
 
 // import components; 
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
-const Avatar = React.lazy(() => import('../../components/avatar/avatar.component'));
+const ProAvatar = React.lazy(() => import('../avatar/pro-avatar.component'));
 
 export default function ProSubscription() {
 
@@ -47,7 +47,7 @@ export default function ProSubscription() {
                 <React.Fragment>
                     <ProWrapper>
                         <ProContainer>
-                            <Avatar />
+                            <ProAvatar pokemon={pokemon} />
                             <ProTitle>Professional</ProTitle>
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>

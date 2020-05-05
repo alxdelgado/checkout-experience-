@@ -15,7 +15,7 @@ import {
 
 // import components; 
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
-const Avatar = React.lazy(() => import('../avatar/avatar.component'));
+const StarterAvatar = React.lazy(() => import('../avatar/starter-avatar.component'));
 
 
 
@@ -50,7 +50,7 @@ export default function StarterSubscription() {
                 <React.Fragment>
                     <StarterWrapper>
                         <StarterContainer>
-                            <Avatar />
+                            <StarterAvatar pokemon={pokemon} />
                             <StarterTitle>Starter</StarterTitle>
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>
