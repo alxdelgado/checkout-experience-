@@ -21,25 +21,25 @@ export const StarterContainer = styled.div`
 
 export const StarterTitle = styled.h4`
     padding: 0em 0em 0em 4.5em;
-    margin: 1em 0px 0px 1em;
+    margin: -4.5em 0px 0px 1.4em;
     font-size: 20px;  
 `;
 
 export const EuroSymbol = styled.div`
     font-size: 13px;
     padding-left: 7em;
-    margin: 1em 0em 0em 1em;
+    margin: 0em 0em 0em 2em;
 `;
 
 export const Cost = styled.div`
     font-size: 20px;
-    padding-left: 6em;
-    margin-top: -12px;
+    padding: 0 auto;
+    margin: -0.4em 0em 0em 6.5em;
 
 `;
 
 export const PerMonth = styled.div`
     font-size: 15px;
-    padding-left: 9em;
-    margin-top: -20px;
+    padding-left: 9.5em;
+    margin: -1.2em 0em 0em 0em;
 `; 

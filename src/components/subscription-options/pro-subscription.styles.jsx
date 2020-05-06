@@ -17,7 +17,6 @@ export const ProContainer = styled.div`
     height: 23em;
     padding: 1em 0em 1em 0em;
     margin: 3em 0em 0em 2em; 
-    
 `;
 
 export const ProTitle = styled.h4`
