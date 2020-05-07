@@ -12,12 +12,9 @@ import {
     PerMonth
 } from './starter-subscriptions.styles';
 
-
 // import components; 
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
 const StarterAvatar = React.lazy(() => import('../avatar/starter-avatar.component'));
-
-
 
 export default function StarterSubscription() {
 

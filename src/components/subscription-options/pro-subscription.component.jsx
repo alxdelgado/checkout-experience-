@@ -15,6 +15,8 @@ import {
 // import components; 
 const ErrorBoundary = React.lazy(() => import('../error-boundary/error-boundary.component'));
 const ProAvatar = React.lazy(() => import('../avatar/pro-avatar.component'));
+const Check_Box = React.lazy(() => import('../check-box/check-box.component'));
+
 
 export default function ProSubscription() {
 
@@ -52,6 +54,7 @@ export default function ProSubscription() {
                             <EuroSymbol>€</EuroSymbol>
                             <Cost>0</Cost>
                             <PerMonth>/ month</PerMonth>
+                            <Check_Box />
                         </ProContainer>
                     </ProWrapper>
                 </React.Fragment>
